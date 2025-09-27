@@ -19,30 +19,27 @@ Un projet pour gérer les biens immobiliers (maisons, appartements…) et les lo
 - Java 17  
 - Spring Boot  
 - Spring Data JPA / Hibernate  
-- MySQL (ou H2 en mode dev)  
+- MySQL   
 - Thymeleaf  
 - Maven  
 
 ---
 
 ## 📂 Structure du projet
-/src
 
-/main
+Control/
+│── src/
+│   ├── main/
+│   │   ├── java/com/example/demo2/   # Code source Java (Controllers, Entities, Repositories, Services)
+│   │   ├── resources/
+│   │   │   ├── templates/            # Vues Thymeleaf (HTML)
+│   │   │   ├── static/               # CSS / JS / Images
+│   │   │   └── application.properties
+│   └── test/                         # Tests unitaires et d’intégration
+│
+├── pom.xml                           # Configuration Maven
+└── README.md
 
-/java
-
-/com/example/demo2
-
-/resources
-
-/templates
-
-/application.properties
-
-/test
-
-pom.xml
 
 
 ---
