@@ -10,11 +10,8 @@ Un projet pour gérer les biens immobiliers (maisons, appartements…) et les lo
 3. [🚀 Fonctionnalités principales](#-fonctionnalités-principales)  
 4. [⚙️ Installation & exécution](#️-installation--exécution-développement-local)  
 5. [🧪 Tests](#-tests)  
-6. [📋 Exemple d’URLs / Endpoints](#-exemple-durls--endpoints)  
-7. [🔧 Configuration du .gitignore](#-configuration-du-gitignore)  
-8. [👥 Contribution](#-contribution)  
-9. [📄 Licence](#-licence)  
-10. [📝 Remarques & améliorations possibles](#-remarques--améliorations-possibles)  
+6. [video demonstrative](#-video--demonstrative)  
+ 
 
 ---
 
@@ -66,11 +63,17 @@ pom.xml
    
 Configurer la BDD dans application.properties
 
-Lancer
-
+Lancer:
 mvn spring-boot:run
 
 Accéder à http://localhost:8081
 
-🧪 Tests
+🧪 Tests:
 mvn test
+
+---
+
+## Video demonstrative
+
+https://github.com/user-attachments/assets/b09f0be1-98f7-4f21-9afe-ac98443813f6
+
