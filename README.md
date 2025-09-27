@@ -28,16 +28,26 @@ Un projet pour gérer les biens immobiliers (maisons, appartements…) et les lo
 ## 📂 Structure du projet
 
 Control/
+
 │── src/
+
 │   ├── main/
+
 │   │   ├── java/com/example/demo2/   # Code source Java (Controllers, Entities, Repositories, Services)
+
 │   │   ├── resources/
+
 │   │   │   ├── templates/            # Vues Thymeleaf (HTML)
+
 │   │   │   ├── static/               # CSS / JS / Images
+
 │   │   │   └── application.properties
+
 │   └── test/                         # Tests unitaires et d’intégration
+
 │
 ├── pom.xml                           # Configuration Maven
+
 └── README.md
 
 
