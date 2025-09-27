@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Add Location</title>
+</head>
+<body>
+<form action="#" th:action="@{/addlocation}" th:object="${location}" method="post">
+    <label for="dateDebut">DateDebut</label>
+    <input type="date" th:field="*{dateDebut}" id="dateDebut" placeholder="DateDeubt">
+    <span th:if="${#fields.hasErrors('dateDebut')}" th:errors="*{dateDebut}"></span>
+
+    <label for="dateFin">DateFin</label>
+    <input type="date" th:field="*{dateFin}" id="dateFin" placeholder="DateFin">
+    <span th:if="${#fields.hasErrors('dateFin')}" th:errors="*{dateFin}"></span>
+
+    <label for="locataire">Locataire</label>
+    <input type="text" th:field="*{locataire}" id="locataire" placeholder="Locataire">
+    <span th:if="${#fields.hasErrors('locataire')}" th:errors="*{locataire}"></span>
+
+    <input type="submit" value="Add Location">
+</form>
+</body>
+</html>

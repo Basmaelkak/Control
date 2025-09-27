@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+  <meta charset="UTF-8">
+  <title>Locations</title>
+</head>
+<body>
+<div th:switch="${locations}">
+  <h2 th:case="null">No locations yet!</h2>
+  <div th:case="*">
+    <h2>Locations</h2>
+    <table>
+      <thead>
+      <tr>
+        <th>DateDebut</th>
+        <th>DateFin</th>
+        <th>Locataire</th>
+        <th>Edit</th>
+        <th>Delete</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr th:each="location:${locations}">
+        <td th:text="${location.dateDebut}"></td>
+        <td th:text="${location.dateFin}"></td>
+        <td th:text="${location.locataire}"></td>
+        <td><a th:href="@{/editlocation/{id}(id=${location.id})}">Edit</a></td>
+        <td><a th:href="@{/deletelocation/{id}(id=${location.id})}">Delete</a></td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+  <p>
+    <a href="/signuplocation">Add a new location</a>
+  </p>
+</div>
+
+</body>
+</html>

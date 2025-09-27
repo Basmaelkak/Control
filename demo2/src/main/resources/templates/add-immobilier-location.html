@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="fr" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+  <meta charset="UTF-8">
+  <title>Ajouter une Location à un Bien Immobilier</title>
+</head>
+<body>
+<h1>Ajouter une Location au Bien Immobilier</h1>
+
+<form action="#" th :action="@{/immobilier/add-location}" th:object="${immobilierLocation}" method="post">
+
+  <!-- Sélection du bien immobilier -->
+  <div>
+    <label for="immobilier">Bien Immobilier :</label>
+    <select th :field="*{immobilier.id}" id="immobilier" readonly>
+      <option th :value="${immobilierLocation.immobilier.id}" th:text="${immobilierLocation.immobilier.adresse}"></option>
+    </select>
+    <span th :if="${#fields.hasErrors('immobilier')}" th:errors="*{immobilier}"></span>
+  </div>
+
+  <!-- Sélection de la location -->
+  <div>
+    <label for="location">Location :</label>
+    <select th :field="*{location.id}" id="location" required>
+      <option value="" disabled selected>Choisissez une location</option>
+      <option th:each="location : ${locations}"
+              th:value="${location.id}"
+              th:text="${location.nomLocataire}"></option>
+    </select>
+    <span th :if="${#fields.hasErrors('location')}" th:errors="*{location}"></span>
+  </div>
+
+  <!-- Saisie du mois -->
+  <div>
+    <label for="mois">Mois :</label>
+    <input type="text" th:field="*{mois}" id="mois" placeholder="Ex: Janvier 2024" required>
+    <span th:if="${#fields.hasErrors('mois')}" th:errors="*{mois}"></span>
+  </div>
+
+  <!-- Bouton de soumission -->
+  <div>
+    <button type="submit">Ajouter la Location au Bien Immobilier</button>
+  </div>
+</form>
+
+<!-- Lien de retour à la liste principale -->
+<p><a th:href="@{/immobilier}">Retour à la liste des biens immobiliers</a></p>
+</body>
+</html>
+

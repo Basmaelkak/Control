@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+  <meta charset="UTF-8">
+  <title>Associations Immobilier-Location</title>
+</head>
+<body>
+<h1>Liste des Associations entre Bien Immobilier et Location</h1>
+<table>
+  <thead>
+  <tr>
+    <th>Bien Immobilier (Adresse)</th>
+    <th>Location (Description)</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr th:each="immobilierLocation : ${immobilierLocations}">
+    <td th:text="${immobilierLocation.immobilier.adresse}"></td>
+    <td th:text="${immobilierLocation.location.description}"></td>
+  </tr>
+  </tbody>
+</table>
+<p><a href="/immobilier-location/add">Ajouter une nouvelle association</a></p>
+$END$
+</body>
+</html>

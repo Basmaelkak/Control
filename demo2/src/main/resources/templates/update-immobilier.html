@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Update Immobilier</title>
+</head>
+<body>
+<form action="#" th:action="@{/updateimmobilier/{id}(id=${immobilier.id})}" th:object="${immobilier}" method="post">
+    <label for="adresse">Adresse</label>
+    <input type="text" th:field="*{adresse}" id="adresse" placeholder="Adresse">
+    <span th:if="${#fields.hasErrors('adresse')}" th:errors="*{adresse}"></span>
+
+    <label for="type">Type</label>
+    <input type="text" th:field="*{type}" id="type" placeholder="Type">
+    <span th:if="${#fields.hasErrors('type')}" th:errors="*{type}"></span>
+
+    <label for="loyer">Loyer</label>
+    <input type="number" th:field="*{loyer}" id="loyer" placeholder="Loyer">
+    <span th:if="${#fields.hasErrors('loyer')}" th:errors="*{loyer}"></span>
+
+    <input type="submit" value="Update Immobilier">
+</form>
+
+</body>
+</html>
+

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Immobiliers</title>
+</head>
+<body>
+<h2>Liste des immobiliers</h2>
+<div th:switch="${immobiliers}">
+    <h3 th:case="null">No immobiliers yet!</h3>
+    <div th:case="*">
+        <table>
+            <thead>
+            <tr>
+                <th>Adresse</th>
+                <th>Type</th>
+                <th>Loyer</th>
+                <th>Edit</th>
+                <th>Delete</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="immobilier : ${immobiliers}">
+                <td th:text="${immobilier.adresse}"></td>
+                <td th:text="${immobilier.type}"></td>
+                <td th:text="${immobilier.loyer}"></td>
+                <td><a th:href="@{/editimmobilier/{id}(id=${immobilier.id})}">Edit</a></td>
+                <td><a th:href="@{/deleteimmobilier/{id}(id=${immobilier.id})}">Delete</a></td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+    <p>
+        <a href="/addimmobilier">Add a new immobilier</a>
+    </p>
+</body>
+</html>
+
+
+
